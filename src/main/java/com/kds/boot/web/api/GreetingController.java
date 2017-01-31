@@ -11,10 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.math.BigInteger;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
@@ -22,7 +19,7 @@ import java.util.concurrent.ExecutionException;
  * Created by KDS on 1/26/2017.
  */
 @RestController
-public class GreetingController {
+public class GreetingController extends BaseController {
 
     Logger logger = LoggerFactory.getLogger(GreetingController.class);
 

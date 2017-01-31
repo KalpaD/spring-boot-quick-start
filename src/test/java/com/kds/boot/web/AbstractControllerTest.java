@@ -2,6 +2,7 @@ package com.kds.boot.web;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.kds.boot.web.api.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
@@ -24,6 +25,14 @@ public class AbstractControllerTest extends AbstractTest {
     protected void setUp() {
         // submitting the web app context to mock mvc builder.
         mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
+    }
+
+    /**
+     * Register only the given controller to web app context
+     * @param controller
+     */
+    protected void setUp(BaseController controller) {
+        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
     }
 
     protected String mapToJson(Object obj) throws JsonProcessingException {
