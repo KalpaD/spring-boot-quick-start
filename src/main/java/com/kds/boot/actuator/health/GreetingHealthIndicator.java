@@ -18,7 +18,7 @@ import java.util.Collection;
  * customized HealthIndicator
  */
 @Component
-public class GreetingHealthIndicator implements HealthIndicator{
+public class GreetingHealthIndicator implements HealthIndicator {
 
     @Autowired
     private GreetingService greetingService;
